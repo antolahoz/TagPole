@@ -16,7 +16,7 @@ struct AddActivityView: View {
     @State private var description = ""
     @State private var frequency = 1
     @State private var lastTimeDone = Date.now
-    private var icons = [\
+    private var icons = ["drop.fill","trash.fill","lightbulb.fill"]
     
     
     var body: some View {
