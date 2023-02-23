@@ -15,6 +15,13 @@
 		FA0A8B6129A6554100EE5FFE /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B6029A6554100EE5FFE /* DataController.swift */; };
 		FA0A8B6329A658F200EE5FFE /* ActivityDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B6229A658F200EE5FFE /* ActivityDetailView.swift */; };
 		FA0A8B6529A6596500EE5FFE /* AddActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B6429A6596500EE5FFE /* AddActivityView.swift */; };
+		FA67370C29A7AD4B00EE337A /* NFC_View.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67370B29A7AD4B00EE337A /* NFC_View.swift */; };
+		FA67370F29A7B3E200EE337A /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67370E29A7B3E200EE337A /* Payload.swift */; };
+		FA67371229A7B4EC00EE337A /* CustomButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371129A7B4EC00EE337A /* CustomButtonStyle.swift */; };
+		FA67371429A7B7B100EE337A /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371329A7B7B100EE337A /* WriteView.swift */; };
+		FA67371629A7B86200EE337A /* NFC_SessionWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */; };
+		FA67371829A7B8C000EE337A /* nfcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371729A7B8C000EE337A /* nfcButton.swift */; };
+		FA67371A29A7B9BF00EE337A /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371929A7B9BF00EE337A /* RecordType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +34,14 @@
 		FA0A8B6029A6554100EE5FFE /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		FA0A8B6229A658F200EE5FFE /* ActivityDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailView.swift; sourceTree = "<group>"; };
 		FA0A8B6429A6596500EE5FFE /* AddActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddActivityView.swift; sourceTree = "<group>"; };
+		FA67370A29A7AC7700EE337A /* probablyareminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = probablyareminder.entitlements; sourceTree = "<group>"; };
+		FA67370B29A7AD4B00EE337A /* NFC_View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFC_View.swift; sourceTree = "<group>"; };
+		FA67370E29A7B3E200EE337A /* Payload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		FA67371129A7B4EC00EE337A /* CustomButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonStyle.swift; sourceTree = "<group>"; };
+		FA67371329A7B7B100EE337A /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFC_SessionWrite.swift; sourceTree = "<group>"; };
+		FA67371729A7B8C000EE337A /* nfcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nfcButton.swift; sourceTree = "<group>"; };
+		FA67371929A7B9BF00EE337A /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,8 +58,6 @@
 		FA0A8B3C29A651AF00EE5FFE = {
 			isa = PBXGroup;
 			children = (
-				FA0A8B5929A6520A00EE5FFE /* Activities.xcdatamodeld */,
-				FA0A8B6029A6554100EE5FFE /* DataController.swift */,
 				FA0A8B4729A651AF00EE5FFE /* probablyareminder */,
 				FA0A8B4629A651AF00EE5FFE /* Products */,
 			);
@@ -61,6 +74,11 @@
 		FA0A8B4729A651AF00EE5FFE /* probablyareminder */ = {
 			isa = PBXGroup;
 			children = (
+				FA0A8B5929A6520A00EE5FFE /* Activities.xcdatamodeld */,
+				FA0A8B6029A6554100EE5FFE /* DataController.swift */,
+				FA67371029A7B4BA00EE337A /* Components */,
+				FA67370D29A7B31400EE337A /* NFC */,
+				FA67370A29A7AC7700EE337A /* probablyareminder.entitlements */,
 				FA0A8B4829A651AF00EE5FFE /* probablyareminderApp.swift */,
 				FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */,
 				FA0A8B6429A6596500EE5FFE /* AddActivityView.swift */,
@@ -77,6 +95,27 @@
 				FA0A8B4F29A651B000EE5FFE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA67370D29A7B31400EE337A /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				FA67370B29A7AD4B00EE337A /* NFC_View.swift */,
+				FA67371329A7B7B100EE337A /* WriteView.swift */,
+				FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */,
+				FA67371729A7B8C000EE337A /* nfcButton.swift */,
+				FA67370E29A7B3E200EE337A /* Payload.swift */,
+				FA67371929A7B9BF00EE337A /* RecordType.swift */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
+		FA67371029A7B4BA00EE337A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FA67371129A7B4EC00EE337A /* CustomButtonStyle.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,12 +188,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA67371629A7B86200EE337A /* NFC_SessionWrite.swift in Sources */,
+				FA67371829A7B8C000EE337A /* nfcButton.swift in Sources */,
+				FA67371229A7B4EC00EE337A /* CustomButtonStyle.swift in Sources */,
 				FA0A8B4B29A651AF00EE5FFE /* ContentView.swift in Sources */,
+				FA67371429A7B7B100EE337A /* WriteView.swift in Sources */,
 				FA0A8B6129A6554100EE5FFE /* DataController.swift in Sources */,
+				FA67370F29A7B3E200EE337A /* Payload.swift in Sources */,
 				FA0A8B5B29A6520A00EE5FFE /* Activities.xcdatamodeld in Sources */,
+				FA67370C29A7AD4B00EE337A /* NFC_View.swift in Sources */,
 				FA0A8B6529A6596500EE5FFE /* AddActivityView.swift in Sources */,
 				FA0A8B6329A658F200EE5FFE /* ActivityDetailView.swift in Sources */,
 				FA0A8B4929A651AF00EE5FFE /* probablyareminderApp.swift in Sources */,
+				FA67371A29A7B9BF00EE337A /* RecordType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,12 +326,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = probablyareminder/probablyareminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"probablyareminder/Preview Content\"";
 				DEVELOPMENT_TEAM = UJ3F56B29C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "We need to access NFC funcionality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -309,12 +357,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = probablyareminder/probablyareminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"probablyareminder/Preview Content\"";
 				DEVELOPMENT_TEAM = UJ3F56B29C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NFCReaderUsageDescription = "We need to access NFC funcionality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
