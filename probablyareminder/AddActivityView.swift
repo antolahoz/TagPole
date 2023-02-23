@@ -4,7 +4,7 @@
 //
 //  Created by GaetanoMiranda on 22/02/23.
 //
-
+import CoreNFC
 import SwiftUI
 
 struct AddActivityView: View {
@@ -16,7 +16,9 @@ struct AddActivityView: View {
     @State private var description = ""
     @State private var frequency = 1
     @State private var lastTimeDone = Date.now
+    var sessionWrite = NFCSessionWrite()
     private var icons = ["drop.fill","trash.fill","lightbulb.fill"]
+    let tagID = UUID()
     
     
     var body: some View {
@@ -42,7 +44,9 @@ struct AddActivityView: View {
                 DatePicker("Last time done", selection: $lastTimeDone)
                 
                 Button {
-                    //
+                    
+                    self.sessionWrite.beginScanning(message: tagID, recordType: .text)
+                    
                 } label: {
                     Text("Pair NFC Tag")
                 }
@@ -57,6 +61,7 @@ struct AddActivityView: View {
                 newActivity.descritpion = description
                 newActivity.lastTimeDone = lastTimeDone
                 newActivity.icon = icons.randomElement()
+                newActivity.id = tagID
                 
                 
                 try? moc.save()

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WriteView : View{
+struct WriteView : View {
     
     @State var record = ""
     @State private var selection = 0
@@ -57,5 +57,13 @@ struct WriteView : View{
             }
             )
         }
+    }
+}
+
+
+
+struct WriteView_Previews: PreviewProvider {
+    static var previews: some View {
+        WriteView(isActive: .constant(true) )
     }
 }

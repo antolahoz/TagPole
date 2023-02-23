@@ -94,19 +94,22 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                 
                 switch self.recordType{
                     
+                
                 case .text:
+                    
                     guard !self.message.isEmpty else {
                         
                         session.alertMessage = "Empty Data"
                         session.invalidate(errorMessage: "Empty text data")
                         return
                     }
+                     
                     //make our payload
                     payLoad = NFCNDEFPayload(format: .nfcWellKnown, type:
                                                 "T".data(using: .utf8)!,
                                              identifier: "Text".data(using: .utf8)!,
                                              payload: self.message.data(using: .utf8)!)
-                    
+                
                 case .url:
                     //Make sure our URl is actual URL
                     guard let url = URL(string: self.message) else{
@@ -115,6 +118,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         session.invalidate(errorMessage: "Data is not a URL")
                         return
                     }
+                    
                     //make payload
                     payLoad = NFCNDEFPayload.wellKnownTypeURIPayload(url: url)
                 }
