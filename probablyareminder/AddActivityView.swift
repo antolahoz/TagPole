@@ -18,7 +18,7 @@ struct AddActivityView: View {
     @State private var lastTimeDone = Date.now
     var sessionWrite = NFCSessionWrite()
     private var icons = ["drop.fill","trash.fill","lightbulb.fill"]
-    let tagID = UUID()
+    let tagID = UUID().uuidString
     
     
     var body: some View {
@@ -56,12 +56,12 @@ struct AddActivityView: View {
             .navigationBarItems(trailing:
                                 Button (action: {
              let newActivity = Activity(context: moc)
-                newActivity.id = UUID()
+                newActivity.id = UUID(uuidString: tagID)
                 newActivity.name = name
                 newActivity.descritpion = description
                 newActivity.lastTimeDone = lastTimeDone
                 newActivity.icon = icons.randomElement()
-                newActivity.id = tagID
+                
                 
                 
                 try? moc.save()
