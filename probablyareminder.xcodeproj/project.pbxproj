@@ -22,6 +22,8 @@
 		FA67371629A7B86200EE337A /* NFC_SessionWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */; };
 		FA67371829A7B8C000EE337A /* nfcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371729A7B8C000EE337A /* nfcButton.swift */; };
 		FA67371A29A7B9BF00EE337A /* RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA67371929A7B9BF00EE337A /* RecordType.swift */; };
+		FA8FB28729AE485500FCE5D6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FB28629AE485500FCE5D6 /* CardView.swift */; };
+		FA8FB28929AE486000FCE5D6 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8FB28829AE486000FCE5D6 /* ProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFC_SessionWrite.swift; sourceTree = "<group>"; };
 		FA67371729A7B8C000EE337A /* nfcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nfcButton.swift; sourceTree = "<group>"; };
 		FA67371929A7B9BF00EE337A /* RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordType.swift; sourceTree = "<group>"; };
+		FA8FB28629AE485500FCE5D6 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA8FB28829AE486000FCE5D6 /* ProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */,
 				FA0A8B6429A6596500EE5FFE /* AddActivityView.swift */,
 				FA0A8B6229A658F200EE5FFE /* ActivityDetailView.swift */,
+				FA8FB28829AE486000FCE5D6 /* ProgressBar.swift */,
+				FA8FB28629AE485500FCE5D6 /* CardView.swift */,
 				FA0A8B4C29A651B000EE5FFE /* Assets.xcassets */,
 				FA0A8B4E29A651B000EE5FFE /* Preview Content */,
 			);
@@ -188,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8FB28729AE485500FCE5D6 /* CardView.swift in Sources */,
 				FA67371629A7B86200EE337A /* NFC_SessionWrite.swift in Sources */,
 				FA67371829A7B8C000EE337A /* nfcButton.swift in Sources */,
 				FA67371229A7B4EC00EE337A /* CustomButtonStyle.swift in Sources */,
@@ -200,6 +207,7 @@
 				FA0A8B6529A6596500EE5FFE /* AddActivityView.swift in Sources */,
 				FA0A8B6329A658F200EE5FFE /* ActivityDetailView.swift in Sources */,
 				FA0A8B4929A651AF00EE5FFE /* probablyareminderApp.swift in Sources */,
+				FA8FB28929AE486000FCE5D6 /* ProgressBar.swift in Sources */,
 				FA67371A29A7B9BF00EE337A /* RecordType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,51 +19,18 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             
-            VStack(alignment: .leading) {
+            VStack() {
                 Text("Upcoming")
                     .font(.title)
                     .padding(.horizontal)
                 Divider()
-                ScrollView(.horizontal){
+                ScrollView(){
                     
                    
                     
-                    HStack {
-                        ForEach(activities) { item in
-                            NavigationLink {
-                                ActivityDetailView()
-                            } label: {
-                                VStack {
-                                    Text(item.name ?? "unknown name")
-                                        .fontWeight(.bold)
-                                    Image(systemName: item.icon ?? "bulb.fill")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(width: 50, height: 50)
-                                    HStack {
-                                        Text("time left")
-                                            .font(.caption)
-                                            .padding()
-                                       
-                                        Text("00.00.00")
-                                            .font(.caption)
-                                            .padding()
-                                        
-                                    }
-                                    
-                                    
-                                }
-                                .frame(width: 160, height: 200 )
-                                .background(.ultraThickMaterial)
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke())
-                                .shadow(radius: 5)
-                                .padding()
-                                
-                            }
-                        }
+                    ForEach(activities) { activity in
+                        CardView(activity: activity)
+                        
                     }
                 }
                 
