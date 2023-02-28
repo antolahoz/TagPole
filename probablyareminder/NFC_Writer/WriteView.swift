@@ -4,6 +4,7 @@
 //
 //  Created by GaetanoMiranda on 23/02/23.
 //
+/*
 
 import SwiftUI
 
@@ -67,3 +68,5 @@ struct WriteView_Previews: PreviewProvider {
         WriteView(isActive: .constant(true) )
     }
 }
+
+*/

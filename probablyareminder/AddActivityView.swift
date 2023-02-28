@@ -18,13 +18,15 @@ struct AddActivityView: View {
     @State private var lastTimeDone = Date.now
     var sessionWrite = NFCSessionWrite()
     private var icons = ["drop.fill","trash.fill","lightbulb.fill"]
-    let tagID = UUID().uuidString
-    
+    let tagID = "probablyareminder://home"
+   // let tagID = "https://probablyareminder://\(UUID().uuidString)"
+   // let url = URL(string: "https://probablyareminder.example.com/\(UUID().uuidString)")
     
     var body: some View {
 
         
         NavigationView {
+            
             Form {
                 Section {
                     TextField("Name", text: $name)
@@ -45,13 +47,13 @@ struct AddActivityView: View {
                 
                 Button {
                     
-                    self.sessionWrite.beginScanning(message: tagID, recordType: .text)
+                    self.sessionWrite.beginScanning(message: self.tagID)
                     
                 } label: {
                     Text("Pair NFC Tag")
                 }
             }
-            
+        
             
             .navigationBarItems(trailing:
                                 Button (action: {

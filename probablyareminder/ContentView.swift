@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     
@@ -120,5 +121,16 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+
+//MARK: Deep Link
+
+extension ContentView{
+    
+    func handleDeepLink(_ deepLink: DeepLink){
+
+        
     }
 }

@@ -10,7 +10,7 @@
 //
 //  Created by Antonio Lahoz on 16/02/23.
 //
-
+/*
 import CoreNFC
 import SwiftUI
 
@@ -390,5 +390,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
             
         }//class coordinator
     }//nfcButton
+
+*/
 
 */

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.rsc.probablyareminder</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>probablyareminder</string>
+			</array>
+		</dict>
+	</array>
+	<key>Entitlements File</key>
+	<dict>
+		<key>Near Field Communication Tag Reader Session Formats</key>
+		<array>
+			<string>NFC Data Exchange Format</string>
+			<string>NFC tag-specific data protocol</string>
+		</array>
+	</dict>
+</dict>
+</plist>

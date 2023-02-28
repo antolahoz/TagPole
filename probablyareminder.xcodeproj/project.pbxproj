@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5BBDE6329AB822F0071053C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBDE6229AB822F0071053C /* AppDelegate.swift */; };
+		A5BBDE6729AD49E20071053C /* DeepLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBDE6629AD49E20071053C /* DeepLinks.swift */; };
 		FA0A8B4929A651AF00EE5FFE /* probablyareminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B4829A651AF00EE5FFE /* probablyareminderApp.swift */; };
 		FA0A8B4B29A651AF00EE5FFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */; };
 		FA0A8B4D29A651B000EE5FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0A8B4C29A651B000EE5FFE /* Assets.xcassets */; };
@@ -25,6 +27,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5BBDE6229AB822F0071053C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A5BBDE6429ABB89C0071053C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		A5BBDE6629AD49E20071053C /* DeepLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinks.swift; sourceTree = "<group>"; };
 		FA0A8B4529A651AF00EE5FFE /* probablyareminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = probablyareminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0A8B4829A651AF00EE5FFE /* probablyareminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = probablyareminderApp.swift; sourceTree = "<group>"; };
 		FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A5BBDE6129AB81FB0071053C /* NFC_Reader */ = {
+			isa = PBXGroup;
+			children = (
+				FA67371729A7B8C000EE337A /* nfcButton.swift */,
+				A5BBDE6229AB822F0071053C /* AppDelegate.swift */,
+			);
+			path = NFC_Reader;
+			sourceTree = "<group>";
+		};
+		A5BBDE6529AD49BE0071053C /* Deep Links */ = {
+			isa = PBXGroup;
+			children = (
+				A5BBDE6629AD49E20071053C /* DeepLinks.swift */,
+			);
+			path = "Deep Links";
+			sourceTree = "<group>";
+		};
 		FA0A8B3C29A651AF00EE5FFE = {
 			isa = PBXGroup;
 			children = (
@@ -74,10 +96,13 @@
 		FA0A8B4729A651AF00EE5FFE /* probablyareminder */ = {
 			isa = PBXGroup;
 			children = (
+				A5BBDE6429ABB89C0071053C /* Info.plist */,
 				FA0A8B5929A6520A00EE5FFE /* Activities.xcdatamodeld */,
 				FA0A8B6029A6554100EE5FFE /* DataController.swift */,
 				FA67371029A7B4BA00EE337A /* Components */,
-				FA67370D29A7B31400EE337A /* NFC */,
+				A5BBDE6529AD49BE0071053C /* Deep Links */,
+				FA67370D29A7B31400EE337A /* NFC_Writer */,
+				A5BBDE6129AB81FB0071053C /* NFC_Reader */,
 				FA67370A29A7AC7700EE337A /* probablyareminder.entitlements */,
 				FA0A8B4829A651AF00EE5FFE /* probablyareminderApp.swift */,
 				FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */,
@@ -97,17 +122,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FA67370D29A7B31400EE337A /* NFC */ = {
+		FA67370D29A7B31400EE337A /* NFC_Writer */ = {
 			isa = PBXGroup;
 			children = (
+				FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */,
 				FA67370B29A7AD4B00EE337A /* NFC_View.swift */,
 				FA67371329A7B7B100EE337A /* WriteView.swift */,
-				FA67371529A7B86200EE337A /* NFC_SessionWrite.swift */,
-				FA67371729A7B8C000EE337A /* nfcButton.swift */,
 				FA67370E29A7B3E200EE337A /* Payload.swift */,
 				FA67371929A7B9BF00EE337A /* RecordType.swift */,
 			);
-			path = NFC;
+			path = NFC_Writer;
 			sourceTree = "<group>";
 		};
 		FA67371029A7B4BA00EE337A /* Components */ = {
@@ -192,7 +216,9 @@
 				FA67371829A7B8C000EE337A /* nfcButton.swift in Sources */,
 				FA67371229A7B4EC00EE337A /* CustomButtonStyle.swift in Sources */,
 				FA0A8B4B29A651AF00EE5FFE /* ContentView.swift in Sources */,
+				A5BBDE6329AB822F0071053C /* AppDelegate.swift in Sources */,
 				FA67371429A7B7B100EE337A /* WriteView.swift in Sources */,
+				A5BBDE6729AD49E20071053C /* DeepLinks.swift in Sources */,
 				FA0A8B6129A6554100EE5FFE /* DataController.swift in Sources */,
 				FA67370F29A7B3E200EE337A /* Payload.swift in Sources */,
 				FA0A8B5B29A6520A00EE5FFE /* Activities.xcdatamodeld in Sources */,
@@ -330,21 +356,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"probablyareminder/Preview Content\"";
-				DEVELOPMENT_TEAM = UJ3F56B29C;
+				DEVELOPMENT_TEAM = 5HSF5GHCRC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = probablyareminder/Info.plist;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "We need to access NFC funcionality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gaetanomiranda.probablyareminder;
+				PRODUCT_BUNDLE_IDENTIFIER = anto.probablyareminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -361,21 +389,23 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"probablyareminder/Preview Content\"";
-				DEVELOPMENT_TEAM = UJ3F56B29C;
+				DEVELOPMENT_TEAM = 5HSF5GHCRC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = probablyareminder/Info.plist;
 				INFOPLIST_KEY_NFCReaderUsageDescription = "We need to access NFC funcionality";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = gaetanomiranda.probablyareminder;
+				PRODUCT_BUNDLE_IDENTIFIER = anto.probablyareminder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

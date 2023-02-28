@@ -7,21 +7,30 @@
 
 import SwiftUI
 import CoreNFC
-
+import os
 
 //NFC Read
 
 struct nfcButton: UIViewRepresentable{
     
+    // MARK: - Properties
+
     @Binding var data : String
     
+    
+    // MARK: - Actions
+    
+    
     func makeUIView(context: UIViewRepresentableContext<nfcButton>) -> UIButton {
+        
         
         let button = UIButton()
         button.setTitle("Read NFC", for: .normal)
         button.backgroundColor = UIColor.black
         button.addTarget(context.coordinator, action: #selector(context.coordinator.beginScan(_:)), for: .touchUpInside)
+         
         return button
+         
     }
     
     func updateUIView(_ uiView: UIButton, context: UIViewRepresentableContext<nfcButton>) {
@@ -58,6 +67,7 @@ struct nfcButton: UIViewRepresentable{
             
         }
         
+        
         func readerSession(_ session: NFCNDEFReaderSession, didInvalidateWithError error: Error) {
             
             if let readerError = error as? NFCReaderError{
@@ -87,6 +97,7 @@ struct nfcButton: UIViewRepresentable{
             print(payload)
             self.data = payload
         }
+        
         
         
         
