@@ -60,41 +60,11 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     }
     */
     
-    /*
-    func tagRemovalDetect(_ tag: NFCNDEFTag) {
-        // In the tag removal procedure, you connect to the tag and query for
-        // its availability. You restart RF polling when the tag becomes
-        // unavailable; otherwise, wait for certain period of time and repeat
-        // availability checking.
-        self.readerSession?.connect(to: tag) { (error: Error?) in
-            if error != nil || !tag.isAvailable {
-                
-                os_log("Restart polling")
-                
-                self.readerSession?.restartPolling()
-                return
-            }
-            DispatchQueue.global().asyncAfter(deadline: DispatchTime.now() + .milliseconds(500), execute: {
-                self.tagRemovalDetect(tag)
-            })
-        }
-    }
-    */
 
     // MARK: - NFCNDEFReaderSessionDelegate
     
     func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
         
-        /*
-        let textPayload = NFCNDEFPayload.wellKnownTypeTextPayload(
-            string: "Brought to you by the Great Fish Company",
-            locale: Locale(identifier: "En")
-        )
-        let urlPayload = self.createURLPayload()
-        ndefMessage = NFCNDEFMessage(records: [urlPayload!, textPayload!])
-        
-        os_log("MessageSize=%d", ndefMessage!.length)
-         */
          
     }
     
@@ -158,7 +128,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                     
                 
                 /*
-                guard !(self.message?.isFileURL ?? (URL(string: "www.google.it") != nil)) else {
+                guard !(self.message?.isFileURL ?? (URL(string: "") != nil)) else {
                         
                         session.alertMessage = "Empty Data"
                         session.invalidate(errorMessage: "Empty text data")
