@@ -8,7 +8,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.rsc.probablyareminder</string>
+			<string>com.mdca.probablyareminder</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>probablyareminder</string>
