@@ -18,7 +18,7 @@ struct AddActivityView: View {
     @State private var lastTimeDone = Date.now
     var sessionWrite = NFCSessionWrite()
     private var icons = ["drop.fill","trash.fill","lightbulb.fill"]
-    let tagID = "probablyareminder://home"
+    let tagID = "probablyareminder://home" + UUID().uuidString
    // let tagID = "https://probablyareminder://\(UUID().uuidString)"
    // let url = URL(string: "https://probablyareminder.example.com/\(UUID().uuidString)")
     

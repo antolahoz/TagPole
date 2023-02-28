@@ -17,7 +17,6 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
     var ndefMessage: NFCNDEFMessage?
     var message = "https://probablyareminder.example.com/"
 
-
     // MARK: - Actions
     
     func beginScanning(message: String){
@@ -87,7 +86,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
             }
             return
         }
-        
+
         let tag = tags.first!
         print("Got first tag!")
         session.connect(to: tag){ (error) in

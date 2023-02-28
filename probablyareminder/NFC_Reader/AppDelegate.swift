@@ -50,15 +50,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
               
                 let host = components.host else{
-            
+
             print("Invalid URL")
             return false
         }
-        
+
         print("components: \(components)")
         
         //create the deep link
-        
+
         guard let deepLink = DeepLink(rawValue: host)
         else{
             
