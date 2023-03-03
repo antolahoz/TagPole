@@ -64,6 +64,7 @@ struct AddActivityView: View {
                 
                 
                 
+                
                 try? moc.save()
                 dismiss()
                 
