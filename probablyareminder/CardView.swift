@@ -21,62 +21,38 @@ struct CardView: View {
         VStack () {
             HStack {
                 Text(activity.name ?? "unknown name")
-                    .foregroundColor(.white)
-                    .fontWeight(.bold)
-                    .font(.title)
+                    .font(.headline)
                     .padding()
                 Spacer()
-                Image(systemName: "trash.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 50)
+                CircularProgressBar()
+                    .frame(width: 20)
                     .padding()
-                    .foregroundColor(.white)
-                
-                
-                   
-                
+                Spacer()
             }
             
-            HStack (spacing: 0){
-                Text(timePassed)
-                    .padding()
-                ProgressBar(value: $completionPercentage)
-                    .frame(height: 20)
-                Text(timeLeft)
-                    .padding()
-            }
-            .foregroundColor(.white)
             
             if isActive {
                 
-                Button {
-                    
-                    withAnimation {
-                        completionPercentage = 0
-                    }
-                    print(completionPercentage)
-                    print("ssssssss")
-                } label: {
-                    Text("set as done")
-                        .padding()
-                        .background(.white)
-                    .clipShape(Capsule())
-                    .foregroundColor(.blue)
-                        .padding()
-                }
-                
-                
-                
                 
             }
+            
            
         
                 
         }
+        .background(.white)
+        .clipShape(CardShape(smallCornerRadius: 17.0, bigCornerRadius: 71.0, offset: 10.0))
+        .shadow(color: .myRed, radius: 0, x:-10, y:0)
+        
+        
+       
         .frame(width: 300)
-        .background(.blue)
-        .clipShape(RoundedRectangle(cornerRadius: 19))
+      
+            
+          
+        
+      //  .clipShape(CardShape(smallCornerRadius: 23, bigCornerRadius: 71, offset: 10))
+        
         .onTapGesture {
             withAnimation {
                 isActive.toggle()
@@ -93,3 +69,4 @@ struct CardView: View {
 //        CardView()
 //    }
 //}
+

@@ -17,59 +17,42 @@ struct ContentView: View {
     @State private var showingAddScreen = false
     
     var body: some View {
+        
         NavigationStack{
-            
-            VStack() {
-                Text("Upcoming")
-                    .font(.title)
-                    .padding(.horizontal)
-                Divider()
-                ScrollView(){
-                    
+            Divider()
+            ZStack {
+                Color(.systemGray6)
+                VStack {
                    
-                    
-                    ForEach(activities) { activity in
-                        CardView(activity: activity)
+                    ScrollView(){
                         
+                       
+                        ForEach(activities) { activity in
+                            CardView(activity: activity)
+                            
+                        }
                     }
                 }
                 
-                Text("Other")
-                    .font(.title)
-                    .padding(.horizontal)
-                Divider()
                 
-               
-                Spacer()
-            }
-            
-//            List {
-//                ForEach(activities) { activity in
-//                    NavigationLink {
-//                        ActivityDetailView()
-//                    } label: {
-//                        HStack {
-//                            Text(activity.name ?? "Unknown Title")
-//
-//                        }
-//                    }
-//                }.onDelete(perform: deleteActivity)
-//            }.listStyle(.inset)
- .toolbar {
-               
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddScreen.toggle()
-                    } label: {
-                            Label("Options", systemImage: "plus")
-                    }
-                }
 
+     .toolbar {
+                   
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showingAddScreen.toggle()
+                        } label: {
+                                Label("Options", systemImage: "plus")
+                        }
+                    }
+
+                }
+                .sheet(isPresented: $showingAddScreen){
+                    AddActivityView()
+                }
+                
+            .navigationTitle("Today")
             }
-            .sheet(isPresented: $showingAddScreen){
-                AddActivityView()
-            }
-            
             
         }
     }
