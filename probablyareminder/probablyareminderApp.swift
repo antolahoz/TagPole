@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct probablyareminderApp: App {
+    @UIApplicationDelegateAdaptor var appDelegate: AppDelegate
     @StateObject private var dataController = DataController()
     var body: some Scene {
         WindowGroup {

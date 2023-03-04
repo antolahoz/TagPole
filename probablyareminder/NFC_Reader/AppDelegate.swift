@@ -11,9 +11,17 @@ import UIKit
 import CoreNFC
 
 
+enum OpeningMode {
+    case card(Int)
+    case normal
+}
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    static private(set) var shared: AppDelegate!
+    
+    var openingURL: String?
     /*
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
@@ -45,12 +53,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      */
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+        AppDelegate.shared = self
         //Process the URL
         guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
-              
                 let host = components.host else{
-
+            
             print("Invalid URL")
             return false
         }
@@ -68,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Hand off to mainViewController
         
-        var contentview = ContentView()
+        let contentview = ContentView()
         contentview.handleDeepLink(deepLink)
         
         return true

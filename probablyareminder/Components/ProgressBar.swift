@@ -48,3 +48,4 @@ struct ProgressBar_Previews: PreviewProvider {
         BarView(progressValue: 0.67)
     }
 }
+
