@@ -11,55 +11,73 @@ struct CardView: View {
     
     var activity: Activity
     @State private var isActive = false
-    var timeLeft: String = "2 d"
-    var timePassed: String = "1 h"
-    @State var completionPercentage = 0.9
-    var add = AddActivityView()
     
     
     var body: some View {
         
-        VStack(){
+        VStack(alignment: .leading){
             
             HStack {
-                VStack(spacing: 0){
+                VStack(alignment: .leading){
                     
- //                   Spacer()
+
     
                     HStack{
                         
-//                        Image(systemName: "washer")
+                        Image(systemName: "washer")
                         
-                        Text(activity.selectedCategory ?? "unknown category" )
-                    }.padding(.top)
+                        Text(activity.selectedCategory ?? "unknown category")
+                    } .font(.callout)
                     
                     Text(activity.name ?? "unknown name")
-                        .fontWeight(.semibold)
-                        .padding()
+                        .font(.title)
+
                     
-                    Text("next in 1 day")
-                        .font(.caption)
+                    Text("Upcoming")
+                        .padding(.horizontal)
+                        .background(.yellow)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .foregroundColor(.white)
                     
-                Spacer()
                 }//VStack
+                .padding(.horizontal)
                 
                 Spacer()
                 
                 CircularProgressBar()
-  //                  .frame(width: 20)
-                    .padding(20)
-  //                  .padding()
+                    .padding()
+
             }
             
             
             if isActive {
-                
+                HStack {
+                    VStack (alignment: .leading){
+                        Text("NFC Tag: **ON**")
+                        Text("Repeat in **3 days**")
+                        Text("Repeeat when **at home**")
+                    }
+                    .padding()
+                    
+                    Spacer()
+                    Button {
+                        
+                    } label: {
+                        Text("Done now")
+                            .padding()
+                            .background(.blue)
+                            .clipShape(Capsule())
+                            .foregroundColor(.white)
+                        
+                    }
+                    .padding()
+                }
             }
-        }//VStack
+        }
         .background(.white)
-        .clipShape(CardShape(smallCornerRadius: 17.0, bigCornerRadius: 71.0, offset: 10.0))
-        .shadow(color: .myRed, radius: 0, x:-10, y:0)
-        .frame(width: 300)
+        .clipShape(RoundedRectangle(cornerRadius: 18))
+        .shadow(color: .red, radius: 0, x:-10, y:0)
+        .padding(.horizontal, 30)
             
           
         
@@ -75,7 +93,7 @@ struct CardView: View {
     }
     }
 
-
+//
 //struct CardView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        CardView()

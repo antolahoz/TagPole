@@ -25,6 +25,7 @@ struct ContentView: View {
  //           Divider()
             ZStack {
                 Color(.systemGray6)
+                    .ignoresSafeArea()
               //  VStack {
                    
                     ScrollView(){
@@ -32,7 +33,6 @@ struct ContentView: View {
                        
                         ForEach(activities) { activity in
                             CardView(activity: activity)
-                                .padding()
                         }
                         
                     }
