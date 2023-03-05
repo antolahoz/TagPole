@@ -10,12 +10,14 @@ import SwiftUI
 struct CardView: View {
     
     var activity: Activity
-    @State private var isActive = false
     var timeLeft: String = "2 d"
     var timePassed: String = "1 h"
-    @State var completionPercentage = 0.9
     var add = AddActivityView()
-    
+
+    @EnvironmentObject var cron : Cronometro
+    @State private var isActive = false
+    @State var completionPercentage = 0.9
+
     
     var body: some View {
         

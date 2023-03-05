@@ -32,7 +32,7 @@ struct ContentView: View {
                        
                         ForEach(activities) { activity in
                             CardView(activity: activity)
-                                .padding()
+                            .padding()
                         }
                         
                     }

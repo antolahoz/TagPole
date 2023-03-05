@@ -5,21 +5,20 @@
 //  Created by Antonio Lahoz on 02/03/23.
 //
 
+import Foundation
 import SwiftUI
 
 
 class Cronometro: ObservableObject {
     
-    
-   
     @Published var hours: Int = 0
     @Published var minutes: Int = 0
     @Published var seconds: Int = 0
     
+    @Published var time : String = ""
+    
 //    @State var timerIsPaused: Bool = true
     var timer: Timer? = nil
-    
-    
     
     func startTimer() -> String{
         
@@ -42,9 +41,10 @@ class Cronometro: ObservableObject {
             }
         }
         
+        time = "\(hours):\(minutes):\(seconds)"
 //        var timerView = "\(hours):\(minutes):\(seconds)"
         
-        return "\(hours):\(minutes):\(seconds)"
+        return time
     }
     
     

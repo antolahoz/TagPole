@@ -16,16 +16,15 @@ struct AddActivityView: View {
     @State private var name = ""
     @State private var description = ""
     @State private var frequency = 1
+    @State private var lastTimeDone = Date.now
+    @State public var selectedCategory = "Kitchen"
+    
  //   @State private var category =  Category(nome: "Laundry", icon: Image(systemName: "washer"))
  //   @State public var selectedCategory: Category = .Kitchen
     var icons = [Image(systemName: "fork.knife.circle"), Image(systemName: "washer"), Image(systemName: "trash"), Image(systemName: "pawprint"), Image(systemName: "shuffle")]
     var categories = ["Kitchen", "Laundry", "Rubbish", "Animals", "Others"]
-
-    @State private var lastTimeDone = Date.now
-    @State public var selectedCategory = "Kitchen"
     
     var sessionWrite = NFCSessionWrite()
- //   private var icons = ["drop.fill","trash.fill","lightbulb.fill"]
     let tagID = "probablyareminder://home" + UUID().uuidString
    // let tagID = "https://probablyareminder://\(UUID().uuidString)"
    // let url = URL(string: "https://probablyareminder.example.com/\(UUID().uuidString)")
@@ -40,13 +39,8 @@ struct AddActivityView: View {
                     
                     TextField("Name", text: $name)
                     
-
                 }
-//                Section {
-//                    TextEditor(text: $description)
-//                } header: {
-//                    Text("Description")
-//                }
+
                 
                 Picker("Category", selection: $selectedCategory) {
 
@@ -56,7 +50,6 @@ struct AddActivityView: View {
                     }
                     
                 }
-                
                 
                 Picker("Frequency", selection: $frequency) {
                     ForEach(1..<100) {

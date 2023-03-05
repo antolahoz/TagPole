@@ -46,7 +46,7 @@ struct NFCSessionRead: UIViewRepresentable{
         
         var session : NFCNDEFReaderSession?
         @Binding var data : String
-        @Published var cron = Cronometro()
+        @EnvironmentObject var cron : Cronometro
         
         init(data: Binding<String>) {
             
@@ -91,14 +91,16 @@ struct NFCSessionRead: UIViewRepresentable{
                 let record = nfcMess.records.first,
                 record.typeNameFormat == .absoluteURI || record.typeNameFormat == .nfcWellKnown,
                 let payload = String(data: record.payload, encoding: .utf8)
+                
+                
                     
             else{
                 
+                cron.startTimer()
                 return
             }
             
-//            cron.restartTimer()
-//            cron.startTimer()
+    
             print(payload)
             self.data = payload
             
