@@ -9,60 +9,76 @@ import SwiftUI
 
 struct CardView: View {
     
+    
     var activity: Activity
-    var timeLeft: String = "2 d"
-    var timePassed: String = "1 h"
-    var add = AddActivityView()
-
-    @EnvironmentObject var cron : Cronometro
     @State private var isActive = false
-    @State var completionPercentage = 0.9
+    @EnvironmentObject var cron : Cronometro
 
     
     var body: some View {
         
-        VStack(){
+        VStack(alignment: .leading){
             
             HStack {
-                VStack(spacing: 0){
+                VStack(alignment: .leading){
                     
- //                   Spacer()
+
     
-                    HStack{
+                    HStack(alignment: .firstTextBaseline){
                         
-//                        Image(systemName: "washer")
+                        Image(systemName: "washer")
+                            .font(.system(size: 22))
                         
-                        Text(activity.selectedCategory ?? "unknown category" )
-                    }.padding(.top)
+                        Text(activity.selectedCategory ?? "unknown category")
+                            .font(.subheadline)
+                    }
                     
                     Text(activity.name ?? "unknown name")
-                        .fontWeight(.semibold)
-                        .padding()
+                        .font(.title3)
+
                     
-                    Text("next in 1 day")
-                        .font(.caption)
+                    Text("Upcoming")
+                        .padding(.horizontal)
+                        .background(.yellow)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .foregroundColor(.white)
                     
-                Spacer()
                 }//VStack
+                .padding(.horizontal, 25)
+                .padding(.vertical, 41)
                 
                 Spacer()
                 
                 CircularProgressBar()
-  //                  .frame(width: 20)
-                    .padding(20)
-  //                  .padding()
+                    .padding(25)
+                
+
             }
             
             
             if isActive {
-                
+                HStack {
+                    VStack (alignment: .leading){
+                        Text("NFC Tag: *ON*")
+                        Text("Repeat in *3 days*")
+                        Text("Repeeat when *at home*")
+                    }
+                    .padding()
+                    
+                    Spacer()
+                 
+                }
             }
-        }//VStack
+        }
         .background(.white)
-        .clipShape(CardShape(smallCornerRadius: 17.0, bigCornerRadius: 71.0, offset: 10.0))
-        .shadow(color: .myRed, radius: 0, x:-10, y:0)
-        .frame(width: 300)
-            
+        .clipShape(RoundedRectangle(cornerRadius: 18))
+       // .shadow(color: .red, radius: 0, x:-10, y:0)
+        .shadow(color: Color(.black).opacity(0.10), radius: 15, x: 2, y: 2)
+        .padding(.horizontal, 30)
+        .padding(.vertical, 10)
+        
+        
+        
           
         
       //  .clipShape(CardShape(smallCornerRadius: 23, bigCornerRadius: 71, offset: 10))
@@ -75,9 +91,10 @@ struct CardView: View {
         }
         
     }
+    
     }
 
-
+//
 //struct CardView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        CardView()

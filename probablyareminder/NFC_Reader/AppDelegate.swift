@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static private(set) var shared: AppDelegate!
     
     var openingURL: String?
-    /*
+    
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
@@ -39,7 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return false
         }
         
-        guard let nfcbutton = window?.rootViewController as? nfcButton else {
+        
+        guard let nfcbutton = window?.rootViewController as? NFCSessionRead else {
             fatalError("")
         }
         
@@ -50,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-     */
+     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         AppDelegate.shared = self

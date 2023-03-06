@@ -10,6 +10,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State var data = ""
+    
     @Environment(\.managedObjectContext) var moc
     @FetchRequest(sortDescriptors: [
         SortDescriptor(\.lastTimeDone),
@@ -21,42 +23,45 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack{
+                            
+                //           Divider()
+                ZStack {
+                    Color(.systemGray6)
+                    //  VStack {
                     
- //           Divider()
-            ZStack {
-                Color(.systemGray6)
-              //  VStack {
-                   
                     ScrollView(){
                         
-                       
+                        
                         ForEach(activities) { activity in
                             CardView(activity: activity)
-                            .padding()
+                                .padding()
                         }
                         
                     }
-                //}
-                
-                
-
-     .toolbar {
-                   
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            showingAddScreen.toggle()
-                        } label: {
+                    //}
+                    
+                    
+                    
+                    .toolbar {
+                        
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button {
+                                showingAddScreen.toggle()
+                            } label: {
                                 Label("Options", systemImage: "plus")
+                            }
                         }
+                        
                     }
-
+                    .sheet(isPresented: $showingAddScreen){
+                        AddActivityView()
+                    }
+                    
                 }
-                .sheet(isPresented: $showingAddScreen){
-                    AddActivityView()
-                }
+                .navigationTitle("Today")
                 
-            }
-            .navigationTitle("Today")
+                
+            
         }
         
     }
@@ -82,7 +87,7 @@ struct ContentView_Previews: PreviewProvider {
 extension ContentView{
     
     func handleDeepLink(_ deepLink: DeepLink){
-
         
+
     }
 }
