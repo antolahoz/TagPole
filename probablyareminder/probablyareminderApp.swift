@@ -15,6 +15,7 @@ struct probablyareminderApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
+                .environmentObject(SnakeColors())
         }
     }
 }

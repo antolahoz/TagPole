@@ -16,6 +16,9 @@ struct ContentView: View {
         SortDescriptor(\.name)
     ]) var activities:FetchedResults<Activity>
     @State private var showingAddScreen = false
+    
+    @State private var showingAddScreen2 = false
+    
     //    @StateObject var nfcController = NFCSessionRead()
 
     var body: some View {
@@ -49,12 +52,24 @@ struct ContentView: View {
                                 Label("Options", systemImage: "plus")
                         }
                     }
+         
+         ToolbarItem(placement: .navigationBarLeading) {
+             Button {
+                 showingAddScreen2.toggle()
+             } label: {
+                     Label("Options", systemImage: "gear")
+             }
+         }
+         
+         
 
+                }
+                .sheet(isPresented: $showingAddScreen2){
+                    SelectGradientView()
                 }
                 .sheet(isPresented: $showingAddScreen){
                     AddActivityView()
                 }
-                
             }
             .navigationTitle("Today")
         }

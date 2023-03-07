@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CircularProgressBar: View {
     @State private var progress: Float = 0.8
+    @EnvironmentObject var snakeColors: SnakeColors
     
     var body: some View {
         
@@ -22,7 +23,7 @@ struct CircularProgressBar: View {
                     
                     Circle()
                         .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
-                        .stroke(AngularGradient(gradient: Gradient(colors: [.green, .yellow, .red]), center: .center, startAngle: .degrees(-6), endAngle: .degrees(354)), style: StrokeStyle(lineWidth: 5, lineCap: .round))
+                        .stroke(AngularGradient(gradient: Gradient(colors: snakeColors.selectedColors), center: .center, startAngle: .degrees(-6), endAngle: .degrees(354)), style: StrokeStyle(lineWidth: 5, lineCap: .round))
                       //  .stroke(AngularGradient(gradient: Gradient(colors: [.green, .yellow, .red]), center: .center), lineWidth: 20)
                         //.foregroundColor(Color.red)
                         .rotationEffect(Angle(degrees: 270.0))
@@ -44,7 +45,7 @@ struct CircularProgressBar: View {
                         
                         
                         if progress != 0.0 {
-                            AngularGradient(gradient: Gradient(colors: [.green, .yellow, .red]), center: .center, startAngle: .degrees(-90), endAngle: .degrees(270))
+                            AngularGradient(gradient: Gradient(colors: snakeColors.selectedColors), center: .center, startAngle: .degrees(-90), endAngle: .degrees(270))
                                 .blendMode(.sourceAtop)
                             .padding(-30)
                         } else {
