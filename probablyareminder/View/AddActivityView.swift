@@ -78,6 +78,7 @@ struct AddActivityView: View {
                 newActivity.lastTimeDone = lastTimeDone
 //                newActivity.icon = icons.randomElement()
                 newActivity.selectedCategory = selectedCategory
+                newActivity.frequency = Int16(frequency)
                 
                 try? moc.save()
                 dismiss()

@@ -49,7 +49,7 @@ struct CardView: View {
                 
                 Spacer()
                 
-                CircularProgressBar()
+                CircularProgressBar(lastTimeDone: activity.lastTimeDone ?? Date.now, frequency: Int(activity.frequency))
                     .padding(25)
                 
 
@@ -59,9 +59,10 @@ struct CardView: View {
             if isActive {
                 HStack {
                     VStack (alignment: .leading){
+                        Text(activity.lastTimeDone?.formatted() ?? "unk")
                         Text("Done **1 days ago**")
                         Text("NFC Tag: **ON**")
-                        Text("Repeat in **3 days**")
+                        Text("Repeat in **3 days** \(activity.frequency)")
                         Text("Repeat when **at home**")
                     }
                     .padding(.horizontal, 30)

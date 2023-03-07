@@ -5,9 +5,34 @@
 //  Created by GaetanoMiranda on 02/03/23.
 import SwiftUI
 
+
+func calculateProgress(lastTimeDone: Date, frequency: Int) -> Float {
+    
+    let totalSeconds = Double(frequency*86400)
+    let passedSeconds = Date.now.distance(to: lastTimeDone)
+    let progress = passedSeconds/totalSeconds
+    return abs(Float(progress))
+}
+
 struct CircularProgressBar: View {
-    @State private var progress: Float = 0.8
+    
     @EnvironmentObject var snakeColors: SnakeColors
+    var lastTimeDone: Date
+    var frequency: Int
+    var timeleft: String {
+        get {
+            let time = timeLeft(lastTimeDone: lastTimeDone, frequency: frequency)
+            return time
+        }
+    }
+    
+    var progress: Float {
+        get {
+            calculateProgress(lastTimeDone: lastTimeDone, frequency: frequency)
+        }
+    }
+    
+    
     
     var body: some View {
         
@@ -28,6 +53,7 @@ struct CircularProgressBar: View {
                        
                     
                     Circle()
+                       // .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                         .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
                         .stroke(AngularGradient(gradient: Gradient(colors: snakeColors.selectedColors), center: .center, startAngle: .degrees(-6), endAngle: .degrees(354)), style: StrokeStyle(lineWidth: 10, lineCap: .round))
                       //  .stroke(AngularGradient(gradient: Gradient(colors: [.green, .yellow, .red]), center: .center), lineWidth: 20)
@@ -36,9 +62,7 @@ struct CircularProgressBar: View {
                         
                     VStack {
                         Text("Next in")
-                        Text("2")
-                            .fontWeight(.bold)
-                        Text("Days")
+                        Text(timeleft)
                     }
                     
                     //Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
