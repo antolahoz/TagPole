@@ -34,7 +34,7 @@ struct SelectGradientView: View {
     var body: some View {
         
         VStack {
-            Text("select gradient")
+            Text("Select App Theme")
                 .font(.largeTitle)
             HStack{
                 ForEach(0..<gradienti.count) {number in
@@ -48,8 +48,8 @@ struct SelectGradientView: View {
                         
                     
                 }
-                .padding()
             }
+            .frame(width: 300, height: 300)
             
             Button {
                 snakeColors.selectedColors = gradienti[selectedGradient].colors
@@ -58,6 +58,10 @@ struct SelectGradientView: View {
                 
             } label: {
                 Text("Done")
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .clipShape(Capsule())
                     
             }
         }
