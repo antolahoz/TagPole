@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return false
         }
         
-        //Hand off to mainViewController
+        //Hand off to ContentView
         
         let contentview = ContentView()
         contentview.handleDeepLink(deepLink)

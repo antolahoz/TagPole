@@ -20,6 +20,8 @@ struct ContentView: View {
     @State private var showingAddScreen = false
     //    @StateObject var nfcController = NFCSessionRead()
 
+    
+    
     var body: some View {
         
         NavigationStack{
@@ -38,6 +40,7 @@ struct ContentView: View {
                         }
                         
                     }
+                    
                     //}
                     
                     
@@ -64,7 +67,10 @@ struct ContentView: View {
             
         }
         
+        
     }
+    
+    
     
     func deleteActivity(at offsets: IndexSet) {
         for offset in offsets {

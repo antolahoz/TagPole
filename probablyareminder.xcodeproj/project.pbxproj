@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A54475C529B75BF4004040D1 /* CircularProgresView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54475C429B75BF4004040D1 /* CircularProgresView.swift */; };
+		A54475C829B7767B004040D1 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A54475C729B7767B004040D1 /* Protocol.swift */; };
 		A5810BF929B2320B000BD92E /* Activity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5810BF729B2320B000BD92E /* Activity+CoreDataClass.swift */; };
 		A5810BFA29B2320B000BD92E /* Activity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5810BF829B2320B000BD92E /* Activity+CoreDataProperties.swift */; };
 		A5810BFC29B2349F000BD92E /* CardShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5810BFB29B2349F000BD92E /* CardShape.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A54475C429B75BF4004040D1 /* CircularProgresView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgresView.swift; sourceTree = "<group>"; };
+		A54475C729B7767B004040D1 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		A5810BF729B2320B000BD92E /* Activity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		A5810BF829B2320B000BD92E /* Activity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Activity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A5810BFB29B2349F000BD92E /* CardShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShape.swift; sourceTree = "<group>"; };
@@ -76,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A54475C629B77649004040D1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A54475C729B7767B004040D1 /* Protocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A5810C0129B2762B000BD92E /* Dictionaries */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */,
+				A54475C429B75BF4004040D1 /* CircularProgresView.swift */,
 				FA8FB28629AE485500FCE5D6 /* CardView.swift */,
 				FA0A8B6429A6596500EE5FFE /* AddActivityView.swift */,
 				FA0A8B6229A658F200EE5FFE /* ActivityDetailView.swift */,
@@ -144,6 +157,7 @@
 				A5BBDE6429ABB89C0071053C /* Info.plist */,
 				FA0A8B5929A6520A00EE5FFE /* Activities.xcdatamodeld */,
 				FA0A8B6029A6554100EE5FFE /* DataController.swift */,
+				A54475C629B77649004040D1 /* Protocols */,
 				A5810C0829B2B7E5000BD92E /* Functionalities */,
 				A5810C0129B2762B000BD92E /* Dictionaries */,
 				FA67371029A7B4BA00EE337A /* Components */,
@@ -266,6 +280,7 @@
 				FA67371829A7B8C000EE337A /* NFC_SessionRead.swift in Sources */,
 				A5810BFE29B23512000BD92E /* CircularProgressBar.swift in Sources */,
 				FA0A8B4B29A651AF00EE5FFE /* ContentView.swift in Sources */,
+				A54475C529B75BF4004040D1 /* CircularProgresView.swift in Sources */,
 				A5BBDE6329AB822F0071053C /* AppDelegate.swift in Sources */,
 				FA67371429A7B7B100EE337A /* WriteView.swift in Sources */,
 				A5BBDE6729AD49E20071053C /* DeepLinks.swift in Sources */,
@@ -273,6 +288,7 @@
 				FA0A8B6129A6554100EE5FFE /* DataController.swift in Sources */,
 				FA67370F29A7B3E200EE337A /* Payload.swift in Sources */,
 				FA0A8B5B29A6520A00EE5FFE /* Activities.xcdatamodeld in Sources */,
+				A54475C829B7767B004040D1 /* Protocol.swift in Sources */,
 				A5810C0029B2353B000BD92E /* Color-theme.swift in Sources */,
 				A5810BFA29B2320B000BD92E /* Activity+CoreDataProperties.swift in Sources */,
 				FA67370C29A7AD4B00EE337A /* NFC_View.swift in Sources */,
