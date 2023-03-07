@@ -12,6 +12,7 @@ struct CardView: View {
     var activity: Activity
     @State private var isActive = false
     @EnvironmentObject var cron : Cronometro
+    @EnvironmentObject var snakeColors: SnakeColors
 
     
     var body: some View {
@@ -38,7 +39,7 @@ struct CardView: View {
                     
                     Text("Upcoming")
                         .padding(.horizontal)
-                        .background(.yellow)
+                        .background(snakeColors.selectedColors[1])
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                         .foregroundColor(.white)
                     

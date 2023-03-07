@@ -34,9 +34,14 @@ struct CircularProgressBar: View {
                         //.foregroundColor(Color.red)
                         .rotationEffect(Angle(degrees: 270.0))
                         
-                        
+                    VStack {
+                        Text("Next in")
+                        Text("2")
+                            .fontWeight(.bold)
+                        Text("Days")
+                    }
                     
-                    Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
+                    //Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
                     ZStack {
                             Image("snake")
                             .font(.system(size:18))

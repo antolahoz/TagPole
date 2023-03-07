@@ -9,5 +9,5 @@ import Foundation
 import SwiftUI
 
 class SnakeColors: ObservableObject {
-   @Published var selectedColors: [Color] = [.blue, .green]
+   @Published var selectedColors: [Color] = [.myYellow, .myOrange, .myRed]
 }

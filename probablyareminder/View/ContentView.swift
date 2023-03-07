@@ -19,6 +19,8 @@ struct ContentView: View {
         SortDescriptor(\.name)
     ]) var activities:FetchedResults<Activity>
     @State private var showingAddScreen = false
+    @State private var showingGradientScreen = false
+    @EnvironmentObject var snakeColors: SnakeColors
     //    @StateObject var nfcController = NFCSessionRead()
 
     var body: some View {
@@ -28,6 +30,7 @@ struct ContentView: View {
                 //           Divider()
                 ZStack {
                     Color(.systemGray6)
+                        .ignoresSafeArea()
                     //  VStack {
                     
                     ScrollView(){
@@ -50,12 +53,26 @@ struct ContentView: View {
                                 showingAddScreen.toggle()
                             } label: {
                                 Label("Options", systemImage: "plus")
+                                    .accentColor(snakeColors.selectedColors[2])
+                            }
+                        }
+                        
+                        ToolbarItem(placement: .navigationBarLeading) {
+                            Button {
+                                showingGradientScreen.toggle()
+                            } label: {
+                                Label("Options", systemImage: "person.circle")
+                                    .accentColor(snakeColors.selectedColors[2])
                             }
                         }
                         
                     }
                     .sheet(isPresented: $showingAddScreen){
                         AddActivityView()
+                    }
+                    
+                    .sheet(isPresented: $showingGradientScreen){
+                        SelectGradientView()
                     }
                     
                 }

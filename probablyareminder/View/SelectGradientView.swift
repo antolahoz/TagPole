@@ -29,7 +29,8 @@ var gradienti: [MyColors] = [
 struct SelectGradientView: View {
     
     @EnvironmentObject var snakeColors: SnakeColors
-    @State private var selectedGradient = 1
+    @State private var selectedGradient = 0
+    @Environment(\.dismiss) var dismiss
     var body: some View {
         
         VStack {
@@ -53,6 +54,8 @@ struct SelectGradientView: View {
             Button {
                 snakeColors.selectedColors = gradienti[selectedGradient].colors
                 print("ho premuto")
+                dismiss()
+                
             } label: {
                 Text("Done")
                     
