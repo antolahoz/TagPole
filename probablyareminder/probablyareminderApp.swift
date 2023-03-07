@@ -16,6 +16,7 @@ struct probablyareminderApp: App {
             ContentView()
                 .environment(\.managedObjectContext, dataController.container.viewContext)
                 .environmentObject(Cronometro())
+                .environmentObject(SnakeColors())
         }
     }
 }

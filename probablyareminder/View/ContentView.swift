@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
     
     @State var data = ""
@@ -20,8 +21,6 @@ struct ContentView: View {
     @State private var showingAddScreen = false
     //    @StateObject var nfcController = NFCSessionRead()
 
-    
-    
     var body: some View {
         
         NavigationStack{
@@ -36,11 +35,10 @@ struct ContentView: View {
                         
                         ForEach(activities) { activity in
                             CardView(activity: activity)
-                                .padding()
+                               
                         }
                         
                     }
-                    
                     //}
                     
                     
@@ -67,10 +65,7 @@ struct ContentView: View {
             
         }
         
-        
     }
-    
-    
     
     func deleteActivity(at offsets: IndexSet) {
         for offset in offsets {

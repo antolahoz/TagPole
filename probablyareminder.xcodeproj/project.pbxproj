@@ -18,6 +18,9 @@
 		A5BBDE6329AB822F0071053C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBDE6229AB822F0071053C /* AppDelegate.swift */; };
 		A5BBDE6729AD49E20071053C /* DeepLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBDE6629AD49E20071053C /* DeepLinks.swift */; };
 		A5BBDE8629B0DD8F0071053C /* Cronometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BBDE8529B0DD8F0071053C /* Cronometro.swift */; };
+		FA08EF3729B77E7A00786518 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08EF3629B77E7A00786518 /* ColorExtension.swift */; };
+		FA08EF3A29B77EAC00786518 /* SnakeColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08EF3929B77EAC00786518 /* SnakeColors.swift */; };
+		FA08EF3C29B77EBC00786518 /* SelectGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA08EF3B29B77EBC00786518 /* SelectGradientView.swift */; };
 		FA0A8B4929A651AF00EE5FFE /* probablyareminderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B4829A651AF00EE5FFE /* probablyareminderApp.swift */; };
 		FA0A8B4B29A651AF00EE5FFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */; };
 		FA0A8B4D29A651B000EE5FFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA0A8B4C29A651B000EE5FFE /* Assets.xcassets */; };
@@ -49,6 +52,9 @@
 		A5BBDE6429ABB89C0071053C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A5BBDE6629AD49E20071053C /* DeepLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinks.swift; sourceTree = "<group>"; };
 		A5BBDE8529B0DD8F0071053C /* Cronometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cronometro.swift; sourceTree = "<group>"; };
+		FA08EF3629B77E7A00786518 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		FA08EF3929B77EAC00786518 /* SnakeColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnakeColors.swift; sourceTree = "<group>"; };
+		FA08EF3B29B77EBC00786518 /* SelectGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectGradientView.swift; sourceTree = "<group>"; };
 		FA0A8B4529A651AF00EE5FFE /* probablyareminder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = probablyareminder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA0A8B4829A651AF00EE5FFE /* probablyareminderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = probablyareminderApp.swift; sourceTree = "<group>"; };
 		FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 		A5BBDE8229B0C0F70071053C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FA08EF3B29B77EBC00786518 /* SelectGradientView.swift */,
 				FA0A8B4A29A651AF00EE5FFE /* ContentView.swift */,
 				A54475C429B75BF4004040D1 /* CircularProgresView.swift */,
 				FA8FB28629AE485500FCE5D6 /* CardView.swift */,
@@ -131,6 +138,14 @@
 				FA0A8B6229A658F200EE5FFE /* ActivityDetailView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		FA08EF3829B77E9000786518 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA08EF3929B77EAC00786518 /* SnakeColors.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FA0A8B3C29A651AF00EE5FFE = {
@@ -157,6 +172,7 @@
 				A5BBDE6429ABB89C0071053C /* Info.plist */,
 				FA0A8B5929A6520A00EE5FFE /* Activities.xcdatamodeld */,
 				FA0A8B6029A6554100EE5FFE /* DataController.swift */,
+				FA08EF3829B77E9000786518 /* Model */,
 				A54475C629B77649004040D1 /* Protocols */,
 				A5810C0829B2B7E5000BD92E /* Functionalities */,
 				A5810C0129B2762B000BD92E /* Dictionaries */,
@@ -197,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				A5810BFB29B2349F000BD92E /* CardShape.swift */,
+				FA08EF3629B77E7A00786518 /* ColorExtension.swift */,
 				A5810BFD29B23512000BD92E /* CircularProgressBar.swift */,
 				A5810BFF29B2353B000BD92E /* Color-theme.swift */,
 				FA8FB28829AE486000FCE5D6 /* ProgressBar.swift */,
@@ -286,6 +303,7 @@
 				A5BBDE6729AD49E20071053C /* DeepLinks.swift in Sources */,
 				A5BBDE8629B0DD8F0071053C /* Cronometro.swift in Sources */,
 				FA0A8B6129A6554100EE5FFE /* DataController.swift in Sources */,
+				FA08EF3C29B77EBC00786518 /* SelectGradientView.swift in Sources */,
 				FA67370F29A7B3E200EE337A /* Payload.swift in Sources */,
 				FA0A8B5B29A6520A00EE5FFE /* Activities.xcdatamodeld in Sources */,
 				A54475C829B7767B004040D1 /* Protocol.swift in Sources */,
@@ -293,12 +311,14 @@
 				A5810BFA29B2320B000BD92E /* Activity+CoreDataProperties.swift in Sources */,
 				FA67370C29A7AD4B00EE337A /* NFC_View.swift in Sources */,
 				FA0A8B6529A6596500EE5FFE /* AddActivityView.swift in Sources */,
+				FA08EF3A29B77EAC00786518 /* SnakeColors.swift in Sources */,
 				FA0A8B6329A658F200EE5FFE /* ActivityDetailView.swift in Sources */,
 				FA0A8B4929A651AF00EE5FFE /* probablyareminderApp.swift in Sources */,
 				FA8FB28929AE486000FCE5D6 /* ProgressBar.swift in Sources */,
 				FA67371A29A7B9BF00EE337A /* RecordType.swift in Sources */,
 				A5810BF929B2320B000BD92E /* Activity+CoreDataClass.swift in Sources */,
 				A5810C0729B2B519000BD92E /* Categories.swift in Sources */,
+				FA08EF3729B77E7A00786518 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

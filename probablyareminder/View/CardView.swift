@@ -4,7 +4,6 @@
 //
 //  Created by GaetanoMiranda on 25/02/23.
 //
-
 import SwiftUI
 
 struct CardView: View {
@@ -59,11 +58,13 @@ struct CardView: View {
             if isActive {
                 HStack {
                     VStack (alignment: .leading){
-                        Text("NFC Tag: *ON*")
-                        Text("Repeat in *3 days*")
-                        Text("Repeeat when *at home*")
+                        Text("Done **1 days ago**")
+                        Text("NFC Tag: **ON**")
+                        Text("Repeat in **3 days**")
+                        Text("Repeat when **at home**")
                     }
-                    .padding()
+                    .padding(.horizontal, 30)
+                    .padding(.bottom, 30)
                     
                     Spacer()
                  
