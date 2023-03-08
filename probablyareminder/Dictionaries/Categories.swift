@@ -11,3 +11,13 @@ import Foundation
 //    case Kitchen, Laundry, Rubbish, Animals, Others
 //    public var id: Self { self }
 //}
+
+
+let iconsDictionary = [
+    "Kitchen": "refrigerator",
+    "Laundry": "washer",
+    "Rubbish": "trash",
+    "Animals": "pawprint",
+    "Others": "house"
+    
+]

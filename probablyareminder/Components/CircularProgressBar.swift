@@ -28,7 +28,7 @@ struct CircularProgressBar: View {
     
     var progress: Float {
         get {
-            calculateProgress(lastTimeDone: lastTimeDone, frequency: frequency)
+            calculateProgress(lastTimeDone: lastTimeDone+86400, frequency: frequency)
         }
     }
     
@@ -54,15 +54,21 @@ struct CircularProgressBar: View {
                     
                     Circle()
                        // .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
-                        .trim(from: 0.0, to: CGFloat(min(self.progress, 1.0)))
+                        .trim(from: 0.0, to: CGFloat(min(self.progress, 313/360)))
                         .stroke(AngularGradient(gradient: Gradient(colors: snakeColors.selectedColors), center: .center, startAngle: .degrees(-6), endAngle: .degrees(354)), style: StrokeStyle(lineWidth: 10, lineCap: .round))
                       //  .stroke(AngularGradient(gradient: Gradient(colors: [.green, .yellow, .red]), center: .center), lineWidth: 20)
                         //.foregroundColor(Color.red)
                         .rotationEffect(Angle(degrees: 270.0))
                         
                     VStack {
-                        Text("Next in")
+                        if progress < 1 {
+                            Text("Next in")
+                        }
+                        
                         Text(timeleft)
+                    }
+                    .onTapGesture {
+                        print(progress)
                     }
                     
                     //Text(String(format: "%.0f %%", min(self.progress, 1.0)*100.0))
@@ -75,12 +81,12 @@ struct CircularProgressBar: View {
                                 //                           .foregroundStyle(
                                 //                            AngularGradient(gradient: Gradient(colors: [.green, .yellow, .red]), center: UnitPoint(x: geo.size.width/2, y: 0.5))
                                 //                           )
-                            .offset(x: 13, y: -(geo.size.height/2))
-                                    .rotationEffect(.degrees(Double(self.progress) * 360))
+                            .offset(x: 11, y: -(geo.size.height/2))
+                                    .rotationEffect(.degrees(min(Double(self.progress) * 360,313)))
                         
                         
                         if progress != 0.0 {
-                            AngularGradient(gradient: Gradient(colors: snakeColors.selectedColors), center: .center, startAngle: .degrees(-90), endAngle: .degrees(270))
+                            AngularGradient(gradient: Gradient(colors: snakeColors.selectedColors), center: .center, startAngle: .degrees(-90), endAngle: .degrees(255.5))
                                 .blendMode(.sourceAtop)
                             .padding(-30)
                         } else {
@@ -94,6 +100,9 @@ struct CircularProgressBar: View {
                 
             }
             .frame(width: 88, height: 88)
+            .onTapGesture {
+                print(progress)
+            }
             
         
         }

@@ -38,6 +38,7 @@ func timeLeft(lastTimeDone: Date, frequency: Int) -> String {
         let timeleft = "\(hoursInt) h"
         return timeleft
     }
+    
     var days = seconds/86400
     days = days.rounded()
     let daysInt = Int(days)
@@ -69,7 +70,7 @@ struct DateTestsView: View {
         
             Text("ora sono le \(now.formatted())")
             Text("last time is \(lastTime.formatted())")
-            Stepper(value: $frequency, in: 1...10) {
+            Stepper(value: $frequency, in: 1...100) {
                 Text("frequenza: \(frequency)")
             }
             DatePicker(selection: $lastTime, label: { Text("Last time") })

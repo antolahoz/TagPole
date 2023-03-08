@@ -13,6 +13,14 @@ struct CardView: View {
     @State private var isActive = false
     @EnvironmentObject var cron : Cronometro
     @EnvironmentObject var snakeColors: SnakeColors
+    
+    
+    
+    var progress: Float {
+        get {
+            calculateProgress(lastTimeDone: activity.lastTimeDone ?? Date.now, frequency: Int(activity.frequency))
+        }
+    }
 
     
     var body: some View {
@@ -26,7 +34,7 @@ struct CardView: View {
     
                     HStack(alignment: .firstTextBaseline){
                         
-                        Image(systemName: "washer")
+                        Image(systemName: iconsDictionary[activity.selectedCategory ?? "gear"] ?? "gear")
                             .font(.system(size: 22))
                         
                         Text(activity.selectedCategory ?? "unknown category")
@@ -34,18 +42,24 @@ struct CardView: View {
                     }
                     
                     Text(activity.name ?? "unknown name")
-                        .font(.title3)
-
+                        .font(.title2)
+                      
                     
-                    Text("Upcoming")
-                        .padding(.horizontal)
-                        .background(snakeColors.selectedColors[1])
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
+// expired, upcoming, just done.
+                    
+                    Text(progress >= 1 ? "expired" : (progress > 0.5 ? "upcoming" :"just done"))
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+//                        .font(.system(size:11))
+                        .padding(.horizontal, 10)
+                     //   .padding(.vertical, 1)
+                        .background(progress >= 1 ? snakeColors.selectedColors[2] : (progress > 0.5 ? snakeColors.selectedColors[1] :snakeColors.selectedColors[0]))
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
                         .foregroundColor(.white)
                     
                 }//VStack
                 .padding(.horizontal, 25)
-                .padding(.vertical, 41)
+              //  .padding(.vertical, 41)
                 
                 Spacer()
                 
@@ -59,11 +73,13 @@ struct CardView: View {
             if isActive {
                 HStack {
                     VStack (alignment: .leading){
-                        Text(activity.lastTimeDone?.formatted() ?? "unk")
+                        
+                        
+                        
                         Text("Done **1 days ago**")
-                        Text("NFC Tag: **ON**")
-                        Text("Repeat in **3 days** \(activity.frequency)")
-                        Text("Repeat when **at home**")
+                        Text("NFC Tag: **Paired**")
+                        Text("Repeat every **\(activity.frequency)** days")
+                        Text("Notify when **at home**")
                     }
                     .padding(.horizontal, 30)
                     .padding(.bottom, 30)
@@ -73,7 +89,7 @@ struct CardView: View {
                 }
             }
         }
-        .background(.white)
+        .background(Color("CardBackground"))
         .clipShape(RoundedRectangle(cornerRadius: 18))
        // .shadow(color: .red, radius: 0, x:-10, y:0)
         .shadow(color: Color(.black).opacity(0.10), radius: 15, x: 2, y: 2)

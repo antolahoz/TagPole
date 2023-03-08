@@ -25,59 +25,70 @@ struct ContentView: View {
 
     var body: some View {
         
-        NavigationStack{
+      
+            NavigationStack{
+                                
+                    //           Divider()
+                    ZStack {
+                        Color(.systemGray6)
+                            .ignoresSafeArea()
+                        //  VStack {
+                        
+                        ScrollView(){
                             
-                //           Divider()
-                ZStack {
-                    Color(.systemGray6)
-                        .ignoresSafeArea()
-                    //  VStack {
-                    
-                    ScrollView(){
-                        
-                        
-                        ForEach(activities) { activity in
-                            CardView(activity: activity)
-                               
-                        }
-                        
-                    }
-                    //}
-                    
-                    
-                    
-                    .toolbar {
-                        
-                        ToolbarItem(placement: .navigationBarTrailing) {
-                            Button {
-                                showingAddScreen.toggle()
-                            } label: {
-                                Label("Options", systemImage: "plus")
-                                    .accentColor(snakeColors.selectedColors[2])
+                            
+                            ForEach(activities) { activity in
+                                CardView(activity: activity)
+                                   
                             }
+                            
                         }
+                        //}
                         
-                        ToolbarItem(placement: .navigationBarLeading) {
-                            Button {
-                                showingGradientScreen.toggle()
-                            } label: {
-                                Label("Options", systemImage: "person.circle")
-                                    .accentColor(snakeColors.selectedColors[2])
+                        
+                        
+                        .toolbar {
+                            
+                            ToolbarItem(placement: .navigationBarTrailing) {
+                                Button {
+                                    showingAddScreen.toggle()
+                                } label: {
+                                    Label("Options", systemImage: "plus")
+                                        .accentColor(snakeColors.selectedColors[2])
+                                }
                             }
+                            
+                            ToolbarItemGroup(placement: .navigationBarLeading) {
+
+                                                       Menu {
+                                                             Button(action: {}) {
+                                                                Label("Edit activity", systemImage: "slider.horizontal.3")
+                                                             }
+
+                                                             Button(action: {showingGradientScreen.toggle()}) {
+                                                                Label("Change theme", systemImage: "paintbrush")
+
+                                                             }
+                                                       }
+                                                    label: {
+                                                       Label("Add", systemImage: "ellipsis.circle")
+                                                            .accentColor(snakeColors.selectedColors[2])
+                                                    }
+                                                    }
+                            
+                        }
+                        .sheet(isPresented: $showingAddScreen){
+                            AddActivityView()
+                        }
+                        
+                        .sheet(isPresented: $showingGradientScreen){
+                            SelectGradientView()
                         }
                         
                     }
-                    .sheet(isPresented: $showingAddScreen){
-                        AddActivityView()
-                    }
+                    .navigationTitle("Today")
                     
-                    .sheet(isPresented: $showingGradientScreen){
-                        SelectGradientView()
-                    }
                     
-                }
-                .navigationTitle("Today")
-                
                 
             
         }

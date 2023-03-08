@@ -11,6 +11,7 @@ struct AddActivityView: View {
     
     @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var snakeColors: SnakeColors
     
     
     @State private var name = ""
@@ -66,6 +67,7 @@ struct AddActivityView: View {
                 } label: {
                     Text("Pair NFC Tag")
                 }
+                .accentColor(snakeColors.selectedColors[2])
             }
         
             
@@ -78,7 +80,7 @@ struct AddActivityView: View {
                 newActivity.lastTimeDone = lastTimeDone
 //                newActivity.icon = icons.randomElement()
                 newActivity.selectedCategory = selectedCategory
-                newActivity.frequency = Int16(frequency)
+                newActivity.frequency = Int16(frequency+1)
                 
                 try? moc.save()
                 dismiss()
@@ -86,13 +88,15 @@ struct AddActivityView: View {
                                 }) {
                                     Text("Done")
                                 }
+                .accentColor(snakeColors.selectedColors[2])
                             )
             .navigationBarItems(leading:
                                 Button (action: {
-             
+             dismiss()
                                 }) {
                                     Text("Cancel")
                                 }
+                .accentColor(snakeColors.selectedColors[2])
                             )
         }.navigationTitle("Add new Activity")
     }

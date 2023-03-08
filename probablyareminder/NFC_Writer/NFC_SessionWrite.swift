@@ -164,7 +164,7 @@ class NFCSessionWrite : NSObject, NFCNDEFReaderSessionDelegate{
                         session.alertMessage = "Write NDEF fail: \(error!.localizedDescription)"
                         print("fail write: \(error!.localizedDescription)")
                     } else {
-                        session.alertMessage = "Write NDEF succesful"
+                        session.alertMessage = "Tag paired correctly"
                         print("Succes write.")
                         
                     }
